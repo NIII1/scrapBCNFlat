@@ -83,20 +83,8 @@ for district, zones in districtZone.items():
             else:
                 break
 
-oldFlat = []
-newFlat = []
-
-with open('inputs/flats.txt', 'r') as f:
-    for flat in f:
-        oldFlat.append(flat)
-
-print('new ads {}'.format(len(ownerFlat)))
-print('old ads {}'.format(len(oldFlat)))
-
-newFlats = list(set(ownerFlat) - set(oldFlat))
-
 with open('inputs/flats.txt', 'w') as f:
-    for flat in newFlat:
+    for flat in ownerFlat:
         f.write(flat + "\n")
 
 
